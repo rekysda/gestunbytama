@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestun Bytama – Gesek Tunai Terpercaya</title>
+  <meta name="description" content="Layanan gesek tunai terpercaya, proses cepat, aman, dan profesional. Hubungi kami sekarang!" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green: #16a34a;
+      --green-dark: #15803d;
+      --green-light: #dcfce7;
+      --gold: #f59e0b;
+      --text: #1e293b;
+      --muted: #64748b;
+      --white: #ffffff;
+      --bg: #f8fafc;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--white);
+      box-shadow: 0 1px 8px rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--green);
+      letter-spacing: -.5px;
+    }
+    .logo span { color: var(--gold); }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: .93rem;
+    }
+    nav a:hover { color: var(--green); }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-cta {
+      background: var(--green);
+      color: var(--white) !important;
+      padding: .45rem 1.1rem;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    .nav-cta:hover { background: var(--green-dark) !important; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #166534 0%, #16a34a 60%, #22c55e 100%);
+      color: var(--white);
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      padding: .3rem .9rem;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .5px;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p {
+      font-size: 1.1rem;
+      opacity: .9;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      background: #25d366;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: .8rem 1.8rem;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(37,211,102,.4);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,211,102,.5); }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      border: 2px solid rgba(255,255,255,.7);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: .8rem 1.8rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.15); }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      background: var(--white);
+      padding: 1.8rem 1.5rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.7rem; font-weight: 900; color: var(--green); }
+    .stat-label { font-size: .82rem; color: var(--muted); font-weight: 500; }
+
+    /* SECTION */
+    section { padding: 4rem 1.5rem; max-width: 1000px; margin: 0 auto; }
+    .section-title { font-size: 1.7rem; font-weight: 800; text-align: center; margin-bottom: .5rem; }
+    .section-sub { text-align: center; color: var(--muted); margin-bottom: 2.5rem; }
+
+    /* CARDS */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+      border: 1px solid #e2e8f0;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+    .card-icon {
+      font-size: 2.4rem;
+      margin-bottom: .75rem;
+      display: block;
+    }
+    .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; color: var(--green); }
+    .card p { font-size: .88rem; color: var(--muted); }
+
+    /* RATES */
+    .rates-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    }
+    .rates-table th {
+      background: var(--green);
+      color: var(--white);
+      padding: .9rem 1.25rem;
+      text-align: left;
+      font-size: .9rem;
+    }
+    .rates-table td {
+      padding: .85rem 1.25rem;
+      border-bottom: 1px solid #f1f5f9;
+      font-size: .92rem;
+    }
+    .rates-table tr:last-child td { border-bottom: none; }
+    .rates-table tr:nth-child(even) td { background: #f8fafc; }
+    .badge-green {
+      display: inline-block;
+      background: var(--green-light);
+      color: var(--green-dark);
+      padding: .2rem .7rem;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    /* STEPS */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
+    .step { display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .step-num {
+      width: 52px; height: 52px;
+      background: var(--green);
+      color: var(--white);
+      font-size: 1.4rem; font-weight: 900;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: .9rem;
+      box-shadow: 0 4px 12px rgba(22,163,74,.35);
+    }
+    .step h3 { font-size: .95rem; font-weight: 700; margin-bottom: .3rem; }
+    .step p { font-size: .85rem; color: var(--muted); }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, #15803d, #16a34a);
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+    .cta-section h2 { font-size: 1.9rem; font-weight: 900; margin-bottom: .75rem; }
+    .cta-section p { opacity: .9; margin-bottom: 2rem; }
+
+    /* FOOTER */
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: .85rem;
+    }
+    footer strong { color: var(--white); }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: #e2e8f0; margin: 0 1.5rem; }
+
+    @media (max-width: 540px) {
+      .nav-links .nav-link-hide { display: none; }
+      .hero { padding: 3.5rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Gestun<span>Bytama</span></div>
+    <div class="nav-links">
+      <a href="#layanan" class="nav-link-hide">Layanan</a>
+      <a href="#cara-kerja" class="nav-link-hide">Cara Kerja</a>
+      <a href="https://wa.me/6281234567890?text=Halo%20Gestun%20Bytama%2C%20saya%20mau%20tanya%20info%20gestun" class="nav-cta">
+        💬 Hubungi Kami
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">✅ Terpercaya & Aman</div>
+    <h1>Gesek Tunai<br /><span>Cepat & Terpercaya</span></h1>
+    <p>Dapatkan uang tunai dari limit kartu kredit Anda dalam hitungan menit. Proses mudah, fee transparan, langsung cair.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/6281234567890?text=Halo%20Gestun%20Bytama%2C%20saya%20mau%20gestun" class="btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat WhatsApp
+      </a>
+      <a href="#cara-kerja" class="btn-outline">Lihat Cara Kerja →</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Transaksi Sukses</div></div>
+    <div class="stat"><div class="stat-num">99%</div><div class="stat-label">Kepuasan Pelanggan</div></div>
+    <div class="stat"><div class="stat-num">5 Menit</div><div class="stat-label">Proses Cair</div></div>
+    <div class="stat"><div class="stat-num">Semua Bank</div><div class="stat-label">Kartu Diterima</div></div>
+  </div>
+
+  <!-- KEUNGGULAN -->
+  <section id="layanan">
+    <div class="section-title">Kenapa Pilih Kami?</div>
+    <div class="section-sub">Keunggulan layanan Gestun Bytama yang membuat pelanggan percaya</div>
+    <div class="cards">
+      <div class="card">
+        <span class="card-icon">⚡</span>
+        <h3>Proses Cepat</h3>
+        <p>Dana cair dalam 5–15 menit setelah verifikasi selesai dilakukan.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">🔒</span>
+        <h3>Aman & Terpercaya</h3>
+        <p>Transaksi dijamin aman. Privasi data pelanggan kami jaga sepenuhnya.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">💳</span>
+        <h3>Semua Kartu</h3>
+        <p>BCA, Mandiri, BNI, BRI, CIMB, Danamon, dan kartu kredit lainnya.</p>
+      </div>
+      <div class="card">
+        <span class="card-icon">📞</span>
+        <h3>Support 24 Jam</h3>
+        <p>Tim kami siap membantu kapan saja melalui WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TARIF -->
+  <section id="tarif" style="padding-top:3rem;">
+    <div class="section-title">Tabel Fee Gestun</div>
+    <div class="section-sub">Transparan, tanpa biaya tersembunyi</div>
+    <table class="rates-table">
+      <thead>
+        <tr>
+          <th>Nominal Gestun</th>
+          <th>Fee</th>
+          <th>Dana Diterima</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rp 1.000.000</td>
+          <td><span class="badge-green">2,5%</span></td>
+          <td><strong>Rp 975.000</strong></td>
+        </tr>
+        <tr>
+          <td>Rp 3.000.000</td>
+          <td><span class="badge-green">2,5%</span></td>
+          <td><strong>Rp 2.925.000</strong></td>
+        </tr>
+        <tr>
+          <td>Rp 5.000.000</td>
+          <td><span class="badge-green">2,5%</span></td>
+          <td><strong>Rp 4.875.000</strong></td>
+        </tr>
+        <tr>
+          <td>Rp 10.000.000</td>
+          <td><span class="badge-green">2%</span></td>
+          <td><strong>Rp 9.800.000</strong></td>
+        </tr>
+        <tr>
+          <td>Rp 20.000.000+</td>
+          <td><span class="badge-green">Nego</span></td>
+          <td><strong>Hubungi Kami</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CARA KERJA -->
+  <section id="cara-kerja" style="padding-top:3rem;">
+    <div class="section-title">Cara Kerja</div>
+    <div class="section-sub">Cukup 4 langkah mudah untuk mendapatkan dana tunai</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Hubungi Kami</h3>
+        <p>Chat WhatsApp dan informasikan nominal yang diinginkan.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Verifikasi Data</h3>
+        <p>Kami akan memandu proses transaksi dengan cepat dan aman.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Proses Gesek</h3>
+        <p>Transaksi diproses menggunakan mesin EDC terpercaya.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Dana Cair</h3>
+        <p>Dana langsung masuk ke rekening Anda dalam hitungan menit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h2>Siap Gestun Sekarang? 🚀</h2>
+    <p>Hubungi kami via WhatsApp dan dana cair dalam 5 menit!</p>
+    <a href="https://wa.me/6281234567890?text=Halo%20Gestun%20Bytama%2C%20saya%20mau%20gestun%20sekarang" class="btn-wa" style="font-size:1.05rem;padding:.9rem 2rem;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Chat WhatsApp Sekarang
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Gestun Bytama</strong> &copy; 2025 · Layanan Gesek Tunai Terpercaya</p>
+    <p style="margin-top:.4rem;">Melayani seluruh Indonesia via WhatsApp</p>
+  </footer>
+
+</body>
+</html>
