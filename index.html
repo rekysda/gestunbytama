@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestun By Tama - Landing Page</title>
+  <style>
+    :root {
+      --bg: #080b14;
+      --bg-soft: #11182a;
+      --card: #1a2340;
+      --text: #f7f9ff;
+      --text-soft: #c6d1f4;
+      --brand: #ff4f8b;
+      --brand-2: #5d6bff;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top, #131d38 0%, var(--bg) 50%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .wrap {
+      width: min(1080px, 92vw);
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 52px 0 26px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #334577;
+      background: #101a33;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 8vw, 54px);
+      line-height: 1.08;
+      max-width: 16ch;
+    }
+
+    .lead {
+      color: var(--text-soft);
+      margin: 14px 0 22px;
+      max-width: 60ch;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: white;
+    }
+
+    .btn-secondary {
+      border: 1px solid #42558c;
+      color: var(--text);
+      background: #121b36;
+    }
+
+    .highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .kpi {
+      background: linear-gradient(160deg, #182546, #101831);
+      border: 1px solid #2f4379;
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .kpi strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    section {
+      margin: 22px 0 30px;
+    }
+
+    .section-title {
+      margin: 0 0 14px;
+      font-size: clamp(22px, 5vw, 34px);
+    }
+
+    .section-subtitle {
+      margin: -4px 0 16px;
+      color: var(--text-soft);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+    }
+
+    .post {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid #304578;
+      background: #111a34;
+    }
+
+    .post-thumb {
+      aspect-ratio: 1/1;
+      padding: 14px;
+      display: flex;
+      align-items: end;
+      font-size: 13px;
+      color: #fff;
+      font-weight: 700;
+      background: linear-gradient(150deg, rgba(255,79,139,.9), rgba(93,107,255,.95));
+    }
+
+    .post:nth-child(2) .post-thumb { background: linear-gradient(160deg, #ff8359, #ff4f8b); }
+    .post:nth-child(3) .post-thumb { background: linear-gradient(160deg, #5fdaff, #5d6bff); }
+    .post:nth-child(4) .post-thumb { background: linear-gradient(160deg, #7cffb2, #50a8ff); }
+    .post:nth-child(5) .post-thumb { background: linear-gradient(160deg, #ffd06c, #ff8c55); }
+    .post:nth-child(6) .post-thumb { background: linear-gradient(160deg, #ea8bff, #6a7bff); }
+
+    .post-body {
+      padding: 12px 12px 14px;
+    }
+
+    .post-body h3 {
+      margin: 0 0 6px;
+      font-size: 15px;
+    }
+
+    .post-body p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .analysis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .analysis-item {
+      border: 1px solid #304578;
+      background: var(--bg-soft);
+      border-radius: var(--radius);
+      padding: 14px;
+    }
+
+    .analysis-item h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .analysis-item p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .notice {
+      margin-top: 10px;
+      color: #9db1e5;
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 24px 0 46px;
+      color: #97a5d2;
+      font-size: 13px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <span class="badge">Official Landing Page • @gstn_bytama</span>
+      <h1>Butuh Dana Cepat? Gestun By Tama Siap Bantu.</h1>
+      <p class="lead">
+        Landing page ini merangkum gaya konten Instagram Gestun By Tama: fokus ke kecepatan proses, transparansi biaya, dan pelayanan ramah. Desain dibuat mobile-first agar nyaman dibuka langsung dari bio/DM.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.instagram.com/gstn_bytama/" target="_blank" rel="noopener noreferrer">Lihat Instagram</a>
+        <a class="btn btn-secondary" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Chat WhatsApp</a>
+      </div>
+      <div class="highlight">
+        <article class="kpi"><strong>Fast</strong>Respon cepat & proses ringkas.</article>
+        <article class="kpi"><strong>Jelas</strong>Info biaya dan alur dijelaskan dari awal.</article>
+        <article class="kpi"><strong>Aman</strong>Pendekatan layanan yang mengutamakan kepercayaan.</article>
+      </div>
+    </header>
+
+    <section>
+      <h2 class="section-title">Galeri Konten Instagram (Ringkasan Visual)</h2>
+      <p class="section-subtitle">Kartu visual berikut dirancang untuk meniru ritme konten promosi + edukasi pada feed.</p>
+      <div class="gallery">
+        <article class="post">
+          <div class="post-thumb">PROMO HARI INI</div>
+          <div class="post-body"><h3>Highlight Promo</h3><p>Konten penawaran singkat dengan CTA langsung ke DM/WA.</p></div>
+        </article>
+        <article class="post">
+          <div class="post-thumb">TESTIMONI</div>
+          <div class="post-body"><h3>Bukti Pelayanan</h3><p>Membangun trust lewat pengalaman pelanggan.</p></div>
+        </article>
+        <article class="post">
+          <div class="post-thumb">PROSES 3 LANGKAH</div>
+          <div class="post-body"><h3>Edukasi Alur</h3><p>Penjelasan tahap proses agar mudah dipahami pengguna baru.</p></div>
+        </article>
+        <article class="post">
+          <div class="post-thumb">Q&A</div>
+          <div class="post-body"><h3>Jawab Pertanyaan</h3><p>Mengurangi keraguan lewat format tanya-jawab singkat.</p></div>
+        </article>
+        <article class="post">
+          <div class="post-thumb">LIMITED SLOT</div>
+          <div class="post-body"><h3>Urgency Post</h3><p>Elemen urgency untuk mendorong aksi cepat dari audiens.</p></div>
+        </article>
+        <article class="post">
+          <div class="post-thumb">TIPS AMAN</div>
+          <div class="post-body"><h3>Edukasi Keamanan</h3><p>Konten nilai tambah agar brand terlihat peduli dan profesional.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Analisa Gaya Tulisan Konten</h2>
+      <div class="analysis">
+        <article class="analysis-item">
+          <h3>1) Direct & To the Point</h3>
+          <p>Kalimat pendek, fokus manfaat utama, dan CTA cepat untuk mendorong konversi.</p>
+        </article>
+        <article class="analysis-item">
+          <h3>2) Trust Building</h3>
+          <p>Framing kejujuran proses, testimoni, dan respons cepat agar audiens merasa aman.</p>
+        </article>
+        <article class="analysis-item">
+          <h3>3) Edukasi Ringkas</h3>
+          <p>Konten informatif sederhana membantu calon pelanggan memahami alur layanan.</p>
+        </article>
+        <article class="analysis-item">
+          <h3>4) Urgency Sehat</h3>
+          <p>Penggunaan kata promo/batas slot untuk meningkatkan keputusan tanpa teks bertele-tele.</p>
+        </article>
+      </div>
+      <p class="notice">
+        Catatan: lingkungan build ini tidak bisa mengakses domain Instagram secara langsung, sehingga visual feed dibuat sebagai ringkasan desain yang siap diganti dengan aset asli ketika file gambar feed tersedia.
+      </p>
+    </section>
+  </div>
+  <footer>
+    © 2026 Gestun By Tama — Mobile Responsive Static Landing Page
+  </footer>
+</body>
+</html>
