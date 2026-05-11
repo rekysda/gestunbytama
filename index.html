@@ -79,13 +79,15 @@
         }
         .hero * { font-weight: 400; }
         .testimonial-section { margin-top: 24px; }
-        .testimonial-grid { display: grid; gap: 18px; grid-template-columns: 1fr 1fr; align-items: center; }
-        .testimonial-card { background:#f8fafc; border:1px solid #e2e8f0; border-radius:18px; padding:24px; color:#111827; box-shadow:0 16px 40px rgba(15,23,42,0.08); }
-        .testimonial-title { margin-bottom:14px; font-size:1.05rem; color:#111827; }
-        .testimonial-text { color:#334155; line-height:1.8; margin-bottom:18px; }
-        .testimonial-image { width:100%; border-radius:20px; object-fit:cover; }
+        .testimonial-list { display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+        .testimonial-card { background:#f8fafc; border:1px solid #e2e8f0; border-radius:18px; padding:24px; color:#111827; box-shadow:0 16px 40px rgba(15,23,42,0.08); display:flex; flex-direction:column; gap:16px; }
+        .testimonial-meta { display:flex; align-items:center; gap:14px; }
+        .testimonial-avatar { width:54px; height:54px; border-radius:50%; object-fit:cover; box-shadow:0 10px 24px rgba(15,23,42,0.12); }
+        .testimonial-name { font-weight:700; color:#0f172a; }
+        .testimonial-role { color:#475569; font-size:0.92rem; }
+        .testimonial-text { color:#334155; line-height:1.8; margin:0; }
         @media (max-width:900px) {
-            .testimonial-grid { grid-template-columns:1fr; }
+            .testimonial-list { grid-template-columns:1fr; }
         }
         @media (max-width:640px) {
             .hero::before { display: none; }
@@ -172,14 +174,60 @@
             </section>
 
             <section id="testimonials" class="testimonial-section">
-                <div class="testimonial-grid">
+                <div style="margin-bottom:18px;">
+                    <h2 style="font-size:1.05rem;margin-bottom:8px;">Testimoni Pelanggan</h2>
+                    <p class="lead">Beberapa pelanggan kami yang sudah cairkan PayLater berbagi pengalaman mereka. Lihat nama, platform, dan komentar langsung dari pelanggan kami.</p>
+                </div>
+                <div class="testimonial-list">
                     <div class="testimonial-card">
-                        <div class="testimonial-title">Testimoni Nyata Pelanggan</div>
-                        <p class="testimonial-text">“Proses cepat dan jelas. Dana cair dalam hitungan jam, dan komunikasi via WhatsApp sangat responsif. Sangat membantu saat butuh dana mendadak dari limit PayLater saya.”</p>
-                        <p style="font-weight:700;color:#111827;">– Pelanggan GestunByTama</p>
+                        <div class="testimonial-meta">
+                            <img src="assets/testi01.png" alt="Profil testi01" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">sheila nai</div>
+                                <div class="testimonial-role">07 Mei 2026</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">gestun amanah 🫰 responnya sangat baik dan sangat membantu 🥰</p>
                     </div>
-                    <div class="testimonial-card" style="padding:0; overflow:hidden;">
-                        <img src="assets/testiviatele.webp" alt="Testimoni GestunByTama" class="testimonial-image">
+                    <div class="testimonial-card">
+                        <div class="testimonial-meta">
+                            <img src="assets/testi02.png" alt="Profil testi02" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Eny Lestari</div>
+                                <div class="testimonial-role">06 Mei 2026</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">gestun teramanah, fast respon dan pencairan juga ga pake lama langsung cair . best gestun 🙏</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-meta">
+                            <img src="assets/testi03.png" alt="Profil testi03" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">reky syarifudin</div>
+                                <div class="testimonial-role">01 Februari 2026</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">nomor real istri saya, yang mau pencairan gestun by tama hanya di nomor ini selain itu hati hati penipuan</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-meta">
+                            <img src="assets/testi04.png" alt="Profil testi04" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Rhea Safitri</div>
+                                <div class="testimonial-role">22 Januari 2026</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">aku Gestun kredivo disini prosesnya cepet banget, admin nya ramah ... makasih kak niken</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-meta">
+                            <img src="assets/testi05.png" alt="Profil testi05" class="testimonial-avatar">
+                            <div>
+                                <div class="testimonial-name">Nayla</div>
+                                <div class="testimonial-role">22 Januari 2026</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">baru pertama kali gestun di by tama kakaknya sabar, ramah dan baik.. fee nya murah dan terjangkau</p>
                     </div>
                 </div>
             </section>
