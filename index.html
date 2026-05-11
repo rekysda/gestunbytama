@@ -86,8 +86,20 @@
         .testimonial-name { font-weight:700; color:#0f172a; }
         .testimonial-role { color:#475569; font-size:0.92rem; }
         .testimonial-text { color:#334155; line-height:1.8; margin:0; }
+        .image-gallery { display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-top:12px; }
+        .gallery-card { border:1px solid #e2e8f0; border-radius:18px; overflow:hidden; background:#fff; cursor:pointer; transition:transform .2s, box-shadow .2s; }
+        .gallery-card:hover { transform:translateY(-3px); box-shadow:0 16px 28px rgba(15,23,42,0.12); }
+        .gallery-card img { width:100%; height:200px; object-fit:cover; display:block; }
+        .gallery-caption { padding:12px 14px 14px; font-size:0.95rem; color:#334155; }
+        .lightbox { display:none; position:fixed; inset:0; background:rgba(15,23,42,0.84); align-items:center; justify-content:center; padding:12px; z-index:999; }
+        .lightbox.open { display:flex; }
+        .lightbox-content { position:relative; max-width:min(100%,900px); max-height:min(100vh,calc(100vh - 24px)); border-radius:18px; overflow:hidden; background:#000; display:flex; align-items:center; justify-content:center; }
+        .lightbox-content img { width:auto; max-width:100%; height:auto; max-height:100%; display:block; }
+        .lightbox-close { position:absolute; top:12px; right:12px; width:40px; height:40px; border:none; border-radius:50%; background:rgba(255,255,255,0.92); color:#0f172a; font-size:1.4rem; cursor:pointer; }
+        .lightbox-close:hover { background:#fff; }
         @media (max-width:900px) {
             .testimonial-list { grid-template-columns:1fr; }
+            .image-gallery { grid-template-columns:1fr; }
         }
         @media (max-width:640px) {
             .hero::before { display: none; }
@@ -231,6 +243,11 @@
                     </div>
                 </div>
             </section>
+            <section id="testicair" style="margin-top:24px;">
+                <h2 style="font-size:1.05rem;margin-bottom:8px;">Testimoni Pencairan</h2>
+                <p class="lead">Bukti pencairan langsung dari transaksi pelanggan. Klik gambar untuk melihat detail ukuran penuh tanpa memperberat halaman.</p>
+                <div id="gallery" class="image-gallery"></div>
+            </section>
             <section id="services" style="margin-top:24px;">
                 <h2 style="font-size:1.05rem;margin-bottom:8px;">Platform yang kami bantu cairkan</h2>
                 <div class="grid">
@@ -274,6 +291,93 @@
                 </div>
             </section>
         </main>
+
+        <div id="lightbox" class="lightbox">
+            <div class="lightbox-content">
+                <button id="lightbox-close" class="lightbox-close" aria-label="Tutup">×</button>
+                <img id="lightbox-img" src="" alt="Testimoni pencairan full" />
+            </div>
+        </div>
+        <script>
+            const testicairFiles = [
+                "158b9e89-83a7-4743-a140-79dc8a6d0536.jpg",
+                "343eaaab-e430-4a0f-a419-3966de0536e8.jpg",
+                "372cd7c5-fca7-4b88-b97b-0506c60e24f6.jpg",
+                "43b89a62-2e7d-4171-b89a-d14f1ab741ad (1).jpg",
+                "43b89a62-2e7d-4171-b89a-d14f1ab741ad.jpg",
+                "4bc6f26f-59f2-403f-9f65-8b196935b7b8.jpg",
+                "4be5a0f3-2876-49d6-84be-24200dbf00f8.jpg",
+                "5099b361-6d89-4017-ac97-869b4bf41057.jpg",
+                "53b4c9bc-4f92-4396-90dc-87cea0d455e8 (1).jpg",
+                "53b4c9bc-4f92-4396-90dc-87cea0d455e8.jpg",
+                "5b767f84-437f-4f3a-9151-6684a4539f74.jpg",
+                "6053100055859761581.jpg",
+                "64469cc2-3559-43fb-bee0-56b2d9d54edd.jpg",
+                "665ea9ee-2d08-42c8-a8a1-d09df63ecede.jpg",
+                "6690ca28-81f6-47d5-b1c0-fda65da2a543.jpg",
+                "6a086ab5-b1ca-4183-83cd-1f6b51cdf269.jpg",
+                "6f3b7f33-bf05-4b94-86c6-12147dfc9e78.jpg",
+                "72755af2-3e64-4217-863b-de3425be8933 (1).jpg",
+                "72755af2-3e64-4217-863b-de3425be8933.jpg",
+                "7376fdb3-71e0-4e86-bd5b-e30afaf83bcb.jpg",
+                "79c3a2e8-2a3b-4076-8037-9efe16392298.jpg",
+                "7b1e18f6-57d6-48f6-a709-9ffa7aa05b87.jpg",
+                "8183bb1c-75e8-4fe0-aeb0-225868621021.jpg",
+                "8638390a-4733-43b6-996a-7c965843a541.jpg",
+                "8c127dff-35bc-4a00-8360-8ceb57d367a2 (1).jpg",
+                "8c127dff-35bc-4a00-8360-8ceb57d367a2.jpg",
+                "acdf862c-3fe3-41fd-a49e-182f07db48e7.jpg",
+                "ae02d082-0037-422d-8bd0-03d283206853.jpg",
+                "b63df0a3-4e15-4d4e-88a0-79e5555e2842.jpg",
+                "b7980ba9-a464-42fa-a343-161cc6a388dc (1).jpg",
+                "b7980ba9-a464-42fa-a343-161cc6a388dc.jpg",
+                "ba3bdeb8-de70-44d1-bc61-e90aedccfcae.jpg",
+                "ca9df25c-7d3f-4225-80a5-7c314b5600ce.jpg",
+                "caf0309f-cccf-4872-ae86-a63af07d7279.jpg",
+                "cb2c1850-5b89-46ec-bde3-8805d487c7eb.jpg",
+                "ced5062b-3938-4791-b947-3f65a136df62.jpg",
+                "cf625c32-a0f1-4330-b9a5-2ef5847ed169.jpg",
+                "d04fb359-1846-4267-82aa-943b21e57f26.jpg",
+                "d30adad8-8f6e-4b1c-8758-6f77e1a31383.jpg",
+                "d89756fc-df27-4504-b99d-47e8cef30903.jpg",
+                "e9244387-e4ac-4206-9d73-c7b0206bc3ff.jpg",
+                "fcfdaef7-0a06-4699-b6d3-7644dea36f9d.jpg",
+                "fe7397e9-3e79-4eb8-b0bd-a7cf0fa46c81.jpg",
+                "ff6e8619-1d8f-4447-8621-3045684eec2c.jpg"
+            ];
+            const gallery = document.getElementById('gallery');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            function renderGallery() {
+                gallery.innerHTML = testicairFiles.map((name, index) => {
+                    return `
+                        <div class="gallery-card" data-full="testicair/${name}">
+                            <img src="testicair/${name}" alt="Testimoni pencairan ${index + 1}" loading="lazy" onerror="this.closest('.gallery-card').style.display='none'">
+                            <div class="gallery-caption">Bukti pencairan ${index + 1}</div>
+                        </div>`;
+                }).join('');
+            }
+            function attachGalleryListeners() {
+                document.querySelectorAll('.gallery-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        lightboxImg.src = card.dataset.full;
+                        lightbox.classList.add('open');
+                    });
+                });
+            }
+            renderGallery();
+            attachGalleryListeners();
+            document.getElementById('lightbox-close').addEventListener('click', () => {
+                lightbox.classList.remove('open');
+                lightboxImg.src = '';
+            });
+            lightbox.addEventListener('click', event => {
+                if (event.target === lightbox) {
+                    lightbox.classList.remove('open');
+                    lightboxImg.src = '';
+                }
+            });
+        </script>
 
         <footer>
             <div style="margin-bottom:8px;"><span class="logo">GestunByTama</span></div>
