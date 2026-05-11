@@ -78,6 +78,15 @@
             color: #0b0d17;
         }
         .hero * { font-weight: 400; }
+        .testimonial-section { margin-top: 24px; }
+        .testimonial-grid { display: grid; gap: 18px; grid-template-columns: 1fr 1fr; align-items: center; }
+        .testimonial-card { background:#f8fafc; border:1px solid #e2e8f0; border-radius:18px; padding:24px; color:#111827; box-shadow:0 16px 40px rgba(15,23,42,0.08); }
+        .testimonial-title { margin-bottom:14px; font-size:1.05rem; color:#111827; }
+        .testimonial-text { color:#334155; line-height:1.8; margin-bottom:18px; }
+        .testimonial-image { width:100%; border-radius:20px; object-fit:cover; }
+        @media (max-width:900px) {
+            .testimonial-grid { grid-template-columns:1fr; }
+        }
         @media (max-width:640px) {
             .hero::before { display: none; }
             .hero-content { padding: 18px; }
@@ -162,6 +171,18 @@
                 <div style="margin-top:10px;color:#1f2937;font-weight:700;">Since 2025</div>
             </section>
 
+            <section id="testimonials" class="testimonial-section">
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-title">Testimoni Nyata Pelanggan</div>
+                        <p class="testimonial-text">“Proses cepat dan jelas. Dana cair dalam hitungan jam, dan komunikasi via WhatsApp sangat responsif. Sangat membantu saat butuh dana mendadak dari limit PayLater saya.”</p>
+                        <p style="font-weight:700;color:#111827;">– Pelanggan GestunByTama</p>
+                    </div>
+                    <div class="testimonial-card" style="padding:0; overflow:hidden;">
+                        <img src="assets/testiviatele.webp" alt="Testimoni GestunByTama" class="testimonial-image">
+                    </div>
+                </div>
+            </section>
             <section id="services" style="margin-top:24px;">
                 <h2 style="font-size:1.05rem;margin-bottom:8px;">Platform yang kami bantu cairkan</h2>
                 <div class="grid">
@@ -209,7 +230,8 @@
         <footer>
             <div style="margin-bottom:8px;"><span class="logo">GestunByTama</span></div>
             <div style="color:#334155;">Transaksi hanya melalui nomor WhatsApp: <strong>+6283811853436</strong></div>
-            <div style="margin-top:8px;color:#334155;">© 2026 GestunByTama</div>
+            <div style="margin-top:8px;color:#334155;">Follow Instagram: <a href="https://www.instagram.com/gstn_bytama/" target="_blank" style="color:#1f2937; text-decoration:underline;">@gstn_bytama</a></div>
+            <div style="margin-top:8px;color:#334155;">Since © 2025</div>
         </footer>
     </div>
 </body>
